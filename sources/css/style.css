@@ -31,7 +31,7 @@ header form {
 
 header form:first-child {
 	float: left;
-	width: 100%;
+	width: 92.5%;
 	margin-top: 1%;
 }
 
@@ -69,14 +69,6 @@ header h1 {
 	padding: 0 0 0 10px;
 	color: #fff;
 	background-image: url(../images/bg-h1.jpg);
-}
-
-header h3 {
-	color: #fff;
-	float: right;
-	margin:0 0 0 1%;
-	padding-left: 1%;
-	padding-right: 1%;
 }
 
 /* ----------nav */
@@ -145,7 +137,7 @@ nav ul{
 	margin: 0.8% 2%;
 }
 
-nav .cart i{
+nav .cart {
 	width: 5%;
 	margin-left: 2%;
 	border-radius: 50%;
@@ -154,7 +146,7 @@ nav .cart i{
 	float: right;
 }
 
-nav .cart:hover  i{
+nav .cart:hover {
 	transform:scale(1.1);
 	cursor: pointer;
 }
@@ -225,6 +217,11 @@ footer ul{
 	height: 100px
 }
 
+.imgb {
+	width: 50px;
+	height:50px;
+}
+
 /********************** INSCRIPTION *********************/
 .inscription h2{
 	text-align: center;
@@ -275,5 +272,4 @@ footer ul{
 .product-on-line {
 	background-color: #999;
 }
-
 /******************* FIN back end*******************/
