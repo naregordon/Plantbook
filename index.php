@@ -1,5 +1,6 @@
 <?php
 $db =  mysqli_connect("localhost","root","troiswa","plantesbook");
+
 if (mysqli_connect_errno()) {
     printf("Échec de la connexion : %s\n", mysqli_connect_error());
     exit();
@@ -15,26 +16,18 @@ if(isset($_POST['deconnect'])) {
 $page = 'home';
 
 if(isset($_POST['add-user'])) {
-	if(isset($_SESSION['id'])) {
-		$header = 'headerlog';
-		$page='home';
-	}
-	else {
+
 		$header = 'header';
-		$page='home';
-	}
+		$page='inscription';
+	
 }
 
 elseif(isset($_POST['page_inscription'])) 
 {
-	if(isset($_SESSION['id'])) {
-		$header = 'headerlog';
-		$page='inscription';
-	}
-	else {
+
 		$header = 'header';
 		$page='inscription';
-	}
+
 }
 
 elseif(isset($_POST['add-product']) || isset($_POST['maj'])) 
@@ -51,7 +44,12 @@ elseif(isset($_POST['add-product']) || isset($_POST['maj']))
 
 elseif(isset($_POST['login'])) 
 {
-	if(isset($_SESSION['id'])) {
+	$emailLog  = $_POST['email'];
+	$passwordLog  = md5($_POST['password']);
+	$res = mysqli_query($db, "SELECT * FROM user WHERE user.email = '".$emailLog."'");
+	$data = mysqli_fetch_assoc($res);
+	if($data['email'] === $emailLog && $data['mot_de_passe'] === $passwordLog) {
+		$_SESSION['id'] = $data['id'];
 		$header = 'headerlog';
 		$page='login';
 	}

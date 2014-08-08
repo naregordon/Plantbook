@@ -8,11 +8,7 @@ if(isset($_POST['add-user'], $_POST['add-nom'], $_POST['add-prenom'] ,$_POST['ad
 
 	mysqli_query($db, "INSERT INTO user (nom, prenom, email, mot_de_passe)
  VALUES ('".$nom."', '".$prenom."', '".$email."', '".$password."')");
-	$_SESSION['id'] = $data['id'];
 	require('apps/home.php');
-	// $res = mysqli_query($db, "SELECT id FROM user WHERE nom='".$nom."'");
-	// $data = mysqli_fetch_assoc($res);
-	// mysqli_query($db, "INSERT INTO panier (id_panier) VALUES ('".$data['id']."')");
 }
 else
 	require('views/inscription.phtml');

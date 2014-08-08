@@ -9,10 +9,15 @@
     </div>
     <div class="modal-body">
         <?php
-            $res = mysqli_query($db, "SELECT * FROM panier WHERE id_panier='".$_SESSION['id']."'");
-            while($data = mysqli_fetch_assoc($res)) {
-                echo "<div class='produitPanier'><img class='ico-back' src='sources/images_load/".$data['photo']."'>".$data['nom']." - ".$data['prix']." €</div>";
-             }
+            if(isset($_SESSION['id'])) {
+                $res = mysqli_query($db, "SELECT * FROM panier WHERE id_panier='".$_SESSION['id']."'");
+                while($data = mysqli_fetch_assoc($res)) {
+                    echo "<div class='produitPanier'><img class='ico-back' src='sources/images_load/".$data['photo']."'>".$data['nom']." - ".$data['prix']." €</div>";
+                 }
+            }
+            else {
+                echo "Connectez-vous pour accéder à votre panier.";
+            }
         ?>
     </div>
     <div class="modal-footer">
