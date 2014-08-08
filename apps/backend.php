@@ -62,12 +62,50 @@ if(isset($_POST['name-product'], $_POST['description-product'], $_POST['categori
 require('models/produit.class.php');
 $listProduct = "SELECT * FROM produits";
 
+echo "<table class='produits_backend'>
+			<tr>
+				<th>Photo</th>
+				<th>ID</th>
+	        	<th>Nom</th>
+	        	<th>Catégorie</th>	
+	        	<th>Description</th>
+	        	<th>Prix</th>
+	        	<th>Stock</th>
+	        	<th>Supprimer</th>
+	        	<th>Modifier</th>
+
+	        </tr>";
+
 if ($result = mysqli_query($db, $listProduct)) {
 
     while ($obj = mysqli_fetch_object($result,"Produit")) {
-        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> id : ".$obj->getId()." nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." categorie :".$obj->getCategorie()." <input type='hidden' name='id' value='".$obj->getId()."'> <input type='submit' name='delete' value='supprimer'><input type='submit' name='modify' value='modifier'></form></div>";
+    	echo "<tr>
+		        <td><img class='imgb' src='sources/images_load/".$obj->getPhoto()."'alt='img'></td>
+		        <td>".$obj->getId()." </td>
+		        <td>". $obj->getNom()."</td>
+		        <td>".$obj->getCategorie()."</td>
+		        <td>". $obj->getDescription() ."</td>
+		        <td>". $obj->getPrix() ."€</td>
+		        <td>". $obj->getStock()."</td>
+
+		        <td>
+		        <form action='index.php' method='POST'>
+		        <input type='hidden' name='id' value='".$obj->getId()."'>
+		        <input type='submit' name='delete' value='Supprimer'>
+
+		        </form>
+		        </td>
+		        <td>
+		        <form action='index.php' method='POST'>
+		        <input type='hidden' name='id' value='".$obj->getId()."'>
+		        <input type='submit' name='modify' value='Modifier'>
+		        </form>
+		        </td>
+	        </tr>";
     }
     mysqli_free_result($result);
 }
+
+echo "</table>";
 
 require("views/backend.phtml");
