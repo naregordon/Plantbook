@@ -1,0 +1,23 @@
+<!-- Button to trigger modal -->
+    <a href="#myModal" role="button" data-toggle="modal"><i class="fa fa-shopping-cart fa-2x green"></i></a>
+ 
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Mon panier</h3>
+    </div>
+    <div class="modal-body">
+        <?php
+            $res = mysqli_query($db, "SELECT * FROM panier WHERE id_panier='".$_SESSION['id']."'");
+            while($data = mysqli_fetch_assoc($res)) {
+                echo "<div class='produitPanier'><img class='ico-back' src='sources/images_load/".$data['photo']."'>".$data['nom']." - ".$data['prix']." €</div>";
+             }
+        ?>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Retour</button>
+    <button class="btn btn-primary">Payer</button>
+    </div>
+    </div>
+    <script src="sources/assets/js/bootstrap-modal.js"></script>

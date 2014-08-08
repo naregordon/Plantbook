@@ -1,0 +1,22 @@
+<div class="backend">
+	<div class="product-on-line">
+	</div>
+	<div class="add-product">
+		<form action="index.php" method="POST" enctype="multipart/form-data">
+			<input type="text" placeholder="Nom du produits" name="name-product" value="<?=$nom?>">
+			<textarea name="description-product" cols="30" rows="10" placeholder="Description"><?=$description?></textarea>
+			<select name="categorie-product" value="<?=$categorie?>">
+				<option value="fruit">fruit</option>
+				<option value="legume">legume</option>
+				<option value="aromatique">aromatique</option>
+		<option value="decoratif">decoratif</option>
+			</select>
+			<input type="file" name="photo-product" accept="image/bmp,image/gif,image/png,image/jpeg,image/x-ms-bmp" value="<?=$photo?>">
+			<input type="number" name="stock-product" placeholder="Stock" value="<?=$stock?>">
+			<input type="number" name="prix-product" value="<?=$prix?>">€
+			<input type="submit" name="add-product" value="Ajouter">
+			<input type="hidden" name="idmaj" value="<?=$_POST['id']?>">
+			<input type="submit" name="maj" value="Mettre à jour">
+		</form>
+	</div>
+</div>

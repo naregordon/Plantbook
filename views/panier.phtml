@@ -1,0 +1,8 @@
+<div class="panier">
+	<?php
+	$res = mysqli_query($db, "SELECT * FROM panier WHERE id_panier='".$_SESSION['id']."'");
+	while($data = mysqli_fetch_assoc($res)) {
+		echo "<div class='produitPanier'><img src='sources/images_load/".$data['photo']."'>".$data['nom'].$data['prix']."</div>";
+	}
+	?>
+</div>

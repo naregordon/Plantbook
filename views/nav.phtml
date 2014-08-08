@@ -1,0 +1,21 @@
+<nav>
+	 <form action="index.php" method="POST">
+	<ul>
+		<li><a href="index.php"><i class="fa fa-home size"></i></a></li>
+		<li><input type="submit" name="filterLeg" value="Légumes"></li>
+		<li><input type="submit" name="filterFruit" value="Fruits"></li>
+		<li><input type="submit" name="filterAro" value="Aromatiques"></li>
+		<li><input type="submit" name="filterDeco" value="Décoration"></li>
+	</ul>
+	</form>
+	<form action="index.php" method="POST">
+	<input type="text" name="searchProduct">
+	 <button type="submit" class="search" name="searchBtn" value="Rechercher"><i class="fa fa-search white"></i></button>
+	 </form>
+	<div class="cart">
+	<?php include('sources/include/modal.phtml'); ?>
+	</div>
+</nav>
+
+
+    

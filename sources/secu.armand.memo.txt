@@ -1,0 +1,1 @@
+&& strlen($_POST['name-product']) < 50 && strlen($_POST['description-product']) < 50 && strlen($_POST['categorie-product']) < 50 && strlen($_POST['stock-product']) < 2 && strlen($_POST['name-product']) > 3 && strlen($_POST['description-product']) > 3 && strlen($_POST['categorie-product']) > 7 && strlen($_POST['stock-product']) > 1
