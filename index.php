@@ -113,6 +113,18 @@ elseif(isset($_POST['deconnect'])) {
 		$page='home';
 	}
 }
+elseif(isset($_POST['payer']) || isset($_POST['deleteProduct'])) {
+
+		$header = 'headerlog';
+		$page='panier';
+
+}
+elseif(isset($_POST['profil']) || isset($_POST['profilModify']) || isset($_POST['profilDelete'])) {
+
+		$header = 'headerlog';
+		$page='profile';
+
+}
 else {
 	if(isset($_SESSION['id'])) {
 		$header = 'headerlog';
@@ -121,5 +133,6 @@ else {
 		$header = 'header';
 	}
 }
+
 
 require("apps/skel.php");
