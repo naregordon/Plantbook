@@ -8,7 +8,7 @@ if(isset($_POST['searchProduct']) && isset($_POST['searchBtn'])) {
 	if ($result = mysqli_query($db, $listProduct)) {
 
 	    while ($obj = mysqli_fetch_object($result,"Produit")) {
-	        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." <input type='hidden' name='idPanier' value='".$obj->getId()."'> <input type='submit' name='addPanier' value='Ajouter au panier'></form></div>";
+	        require('views/fiche.phtml');
 	    }
 	    mysqli_free_result($result);
 	}
@@ -21,7 +21,7 @@ elseif(isset($_POST['filterLeg'])) {
 	if ($result = mysqli_query($db, $listProduct)) {
 
 	    while ($obj = mysqli_fetch_object($result,"Produit")) {
-	        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." <input type='hidden' name='idPanier' value='".$obj->getId()."'> <input type='submit' name='addPanier' value='Ajouter au panier'></form></div>";
+	        require('views/fiche.phtml');
 	    }
 	    mysqli_free_result($result);
 	}
@@ -34,7 +34,7 @@ elseif(isset($_POST['filterFruit'])) {
 	if ($result = mysqli_query($db, $listProduct)) {
 
 	    while ($obj = mysqli_fetch_object($result,"Produit")) {
-	        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." <input type='hidden' name='idPanier' value='".$obj->getId()."'> <input type='submit' name='addPanier' value='Ajouter au panier'></form></div>";
+	        require('views/fiche.phtml');
 	    }
 	    mysqli_free_result($result);
 	}
@@ -47,7 +47,7 @@ elseif(isset($_POST['filterAro'])) {
 	if ($result = mysqli_query($db, $listProduct)) {
 
 	    while ($obj = mysqli_fetch_object($result,"Produit")) {
-	        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." <input type='hidden' name='idPanier' value='".$obj->getId()."'> <input type='submit' name='addPanier' value='Ajouter au panier'></form></div>";
+	        require('views/fiche.phtml');
 	    }
 	    mysqli_free_result($result);
 	}
@@ -60,7 +60,7 @@ elseif(isset($_POST['filterDeco'])) {
 	if ($result = mysqli_query($db, $listProduct)) {
 
 	    while ($obj = mysqli_fetch_object($result,"Produit")) {
-	        echo "<div class='affProduit'> <form action='index.php' method='POST'><img class='ico-back' src='sources/images_load/".$obj->getPhoto()."'alt='img'> nom :". $obj->getNom()." description :". $obj->getDescription() ." prix :". $obj->getPrix() ."€ stock :". $obj->getStock()." <input type='hidden' name='idPanier' value='".$obj->getId()."'> <input type='submit' name='addPanier' value='Ajouter au panier'></form></div>";
+	        require('views/fiche.phtml');
 	    }
 	    mysqli_free_result($result);
 	}

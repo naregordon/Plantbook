@@ -221,7 +221,7 @@ footer ul{
 }
 
 .ico-back {
-	width: 50px;
+	width:50px;
 	height: 50px
 }
 
@@ -263,6 +263,39 @@ footer ul{
 	margin: 0 auto;
 }
 /********************** FIN INSCRIPTION *********************/
+
+/*profil*/
+.profil h2{
+	text-align: center;
+	font-weight:lighter;
+	color:#9ACD32;
+}
+.bouton_sinscrire{
+	border:none;
+	border-radius: 3px;
+	padding:5px;
+	color:white;
+}
+.profil input[type="submit"]{
+	text-decoration: none;
+	color:#9ACD32;
+	font-size: 120%;
+	background: none;
+	border:none;
+	margin: 0;
+}
+.profil{
+	margin: 5% auto;
+}
+
+.profil form{
+	font-family:  'Lobster', cursive;
+	border-radius: 5px;
+	padding:25px;
+	margin: 0;
+	width: 20%;
+	margin: 0 auto;
+}
 
 
 /*******************back end*******************/

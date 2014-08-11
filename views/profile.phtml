@@ -1,5 +1,6 @@
 <div class="profil">
 	<form action="index.php" method="POST">
+		<h2>Mon compte</h2>
 		<input type="text" name="nom" placeholder="nom" value="<?=$nom?>">
 		<input type="text" name="prenom"  placeholder="prenom" value="<?=$prenom?>">
 		<input type="text" name="email"  placeholder="email" value="<?=$email?>">
@@ -7,7 +8,7 @@
 		<input type="number" name="numeroRue" placeholder="numero" value="<?=$numeroRue?>">
 		<input type="text" name="ville" placeholder="ville" value="<?=$ville?>">
 		<input type="number" name="codePostal" placeholder="code postal" value="<?=$codePostal?>">
-		<input type="submit" name="profilModify" value="enregistrer">
-		<input type="submit" name="profilDelete" value="supprimer le compte">
+		<input type="submit" class="bouton_sinscrire" name="profilModify" value="Enregistrer">
+		<input type="submit" class="bouton_sinscrire" name="profilDelete" value="Supprimer le compte">
 	</form>
 </div>
