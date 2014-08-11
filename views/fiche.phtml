@@ -1,0 +1,18 @@
+<div class='affProduit'> 
+    <form action='index.php' method='POST'>
+	    <img class='ico-back' src='sources/images_load/<?=$obj->getPhoto()?>' alt='img'>
+	    <p class="titre_produit"><em><strong><?=$obj->getNom()?></em></strong></p>
+	    <div class="description_produit"><p><?=$obj->getDescription()?></p></div>
+	    <div class="prix_stock">
+	    <ul>
+		    <li class="prix_produit">Prix: <?=$obj->getPrix()?> €</li>
+		    <li class="stock_produit">Stock: <?=$obj->getStock()?> unité(s)</li>
+	    </ul>
+	    <button class="button_panier" type='submit' name='addPanier'><i class="fa fa-shopping-cart fa-2x green"></i></button>
+		</div>
+	    
+	    
+	    <input type='hidden' name='idPanier' value='<?=$obj->getId()?>'>
+	<!--     <input type='submit' name='addPanier' value='Ajouter au panier'> -->
+    </form>
+ </div>
